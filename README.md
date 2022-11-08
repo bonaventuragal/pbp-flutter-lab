@@ -56,7 +56,7 @@ floatingActionButton: Stack(
 ),
 ```
 
-field `floatingActionButton` akan berisi sebuah `Stack`. `Stack` tersebut digunakan untuk menampilkan 2 buah `FloatingActionButton` satu di atas yang lain, dimana Button sebagai tombol decrement di-align ke bawah kiri dan Button sebagai tombol increment di-align ke bawah kanan. Kedua button tersebut ditaruh sebagai child dari sebuah `Padding` untuk memberikan jarak antara button dan ujung layar.
+field `floatingActionButton` akan berisi sebuah `Stack`. `Stack` tersebut digunakan untuk menampilkan 2 buah `FloatingActionButton` satu di atas yang lain, dimana Button sebagai tombol decrement di-align ke bawah kiri dan Button sebagai tombol increment di-align ke bawah kanan. Kedua button tersebut ditaruh sebagai child dari sebuah `Padding` untuk memberikan jarak antara button dan ujung layar. [Referensi](https://stackoverflow.com/questions/50839282/how-to-add-multiple-floating-button-in-stack-widget-in-flutter)
 - Tulisan di atas tombol counter diubah dengan menambahkan 2 buah `Text` untuk menampilkan tulisan `GANJIL` berwarna merah dan `GENAP` berwarna biru. Kedua `Text` tersebut dimasukkan ke dalam sebuah conditional, sehingga hanya salah satu dari kedua `Text` tersebut yang ditampilkan, sesuai dengan state `_counter`.
 - Menambahkan function `_incrementCounter()` dan `_decrementCounter()` yang masing-masing di dalamnya memanggil `setState()`. Di dalam `setState()` tersebut, `_counter` akan ditambah/dikurang 1. `_counter` hanya akan dikurang 1 jika `_counter > 0`.
-- Kedua `FloatingActionButton` yang telah ditambahkan sebelumnya disambungkan dengan function yang bersesuaian dengan cara menambahkan function tersebtu pada properti `onPressed`.
+- Kedua `FloatingActionButton` yang telah ditambahkan sebelumnya disambungkan dengan function yang bersesuaian dengan cara menambahkan function tersebut pada properti `onPressed`.
