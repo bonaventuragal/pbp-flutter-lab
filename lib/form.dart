@@ -173,6 +173,7 @@ class _FormBudgetState extends State<FormBudget> {
                             );
                           },
                         );
+                        _formKey.currentState!.reset();
                       }
                     },
                     style: ButtonStyle(
