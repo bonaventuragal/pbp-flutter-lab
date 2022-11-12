@@ -29,9 +29,18 @@ class _DataBudgetState extends State<DataBudget> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        o.judul,
-                        style: const TextStyle(fontSize: 24.0),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            o.judul,
+                            style: const TextStyle(fontSize: 24.0),
+                          ),
+                          Text(
+                            o.date.toString().split(' ')[0],
+                            style: const TextStyle(fontSize: 16.0),
+                          )
+                        ],
                       ),
                       const SizedBox(height: 8.0),
                       Row(

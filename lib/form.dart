@@ -14,6 +14,7 @@ class _FormBudgetState extends State<FormBudget> {
   String _judul = "";
   int _nominal = 0;
   String _jenis = "Pengeluaran";
+  DateTime? _date = DateTime.now();
 
   @override
   Widget build(BuildContext context) {
@@ -123,11 +124,47 @@ class _FormBudgetState extends State<FormBudget> {
                       child: Text('Pemasukan'),
                     ),
                   ],
-                  onChanged: (String? newValue) {
+                  onChanged: (String? value) {
                     setState(() {
-                      _jenis = newValue!;
+                      _jenis = value!;
                     });
                   },
+                ),
+              ),
+              Padding(
+                // Input Jenis
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Icon(
+                      Icons.calendar_month_outlined,
+                      color: Colors.blue,
+                    ),
+                    const SizedBox(width: 4.0),
+                    TextButton(
+                      onPressed: (() {
+                        showDatePicker(
+                          context: context,
+                          initialDate: DateTime.now(),
+                          firstDate: DateTime(2000),
+                          lastDate: DateTime(2999),
+                        ).then((value) {
+                          setState(() {
+                            _date = value;
+                          });
+                        });
+                      }),
+                      child: Text(
+                        _date.toString().split(' ')[0],
+                        style: const TextStyle(
+                          fontSize: 16.0,
+                          // color: Colors.black87,
+                          fontWeight: FontWeight.normal,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
               Expanded(
@@ -140,6 +177,7 @@ class _FormBudgetState extends State<FormBudget> {
                           judul: _judul,
                           nominal: _nominal,
                           jenis: _jenis,
+                          date: _date,
                         );
                         showDialog(
                           context: context,
