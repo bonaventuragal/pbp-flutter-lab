@@ -1,6 +1,7 @@
 import 'package:counter_7/data_budget.dart';
 import 'package:flutter/material.dart';
 import 'package:counter_7/form.dart';
+import 'package:counter_7/drawer.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,6 +19,10 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: const MyHomePage(),
+      routes: {
+        '/form-budget': (context) => const FormBudget(),
+        '/data-budget': (context) => const DataBudget()
+      },
     );
   }
 }
@@ -52,40 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      drawer: Drawer(
-        child: Column(
-          children: [
-            // Menambahkan clickable menu
-            ListTile(
-              title: const Text('Counter'),
-              onTap: () {
-                // Route menu ke counter
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: const Text('Tambah Budget'),
-              onTap: () {
-                // Route menu ke tambah budget
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => const FormBudget()),
-                );
-              },
-            ),
-            ListTile(
-              title: const Text('Data Budget'),
-              onTap: () {
-                // Route menu ke data budget
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => const DataBudget()),
-                );
-              },
-            ),
-          ],
-        ),
-      ),
+      drawer: buildDrawer(context),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
