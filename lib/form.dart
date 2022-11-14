@@ -11,9 +11,9 @@ class FormBudget extends StatefulWidget {
 
 class _FormBudgetState extends State<FormBudget> {
   final _formKey = GlobalKey<FormState>();
-  String _judul = "";
+  String _judul = '';
   int _nominal = 0;
-  String _jenis = "Pengeluaran";
+  String _jenis = '';
   DateTime? _date = DateTime.now();
 
   @override
@@ -111,9 +111,10 @@ class _FormBudgetState extends State<FormBudget> {
               Padding(
                 // Input Jenis
                 padding: const EdgeInsets.all(8.0),
-                child: DropdownButton(
-                  value: _jenis,
+                child: DropdownButton<String>(
+                  value: null,
                   icon: const Icon(Icons.keyboard_arrow_down),
+                  hint: Text(_jenis == '' ? 'Pilih jenis' : _jenis),
                   items: const <DropdownMenuItem<String>>[
                     DropdownMenuItem<String>(
                       value: 'Pengeluaran',
