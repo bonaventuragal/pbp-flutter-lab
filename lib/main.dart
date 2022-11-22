@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:counter_7/pages/data_budget/data_budget.dart';
 import 'package:counter_7/pages/form/form.dart';
-import 'package:counter_7/pages/mywatchlist/mywatchlist.dart';
+import 'package:counter_7/pages/mywatchlist/my_watchlist.dart';
 import 'package:counter_7/pages/mywatchlist/watchlist_detail.dart';
 import 'package:counter_7/utils/drawer.dart';
 
