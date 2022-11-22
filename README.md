@@ -10,10 +10,13 @@ Stateful Widget adalah widget yang bergantung pada sebuah state. Setelah di-buil
 ### Sebutkan widget apa saja yang kamu pakai di proyek kali ini dan jelaskan fungsinya
 - `Text`
 Widget yang digunakan untuk menampilkan tulisan. Dalam tugas ini digunakan untuk menampilkan tulisan `GANJIL`, `GENAP`, dan `counter`.
+
 - `Stack`
 Widget yang digunakan untuk menampilkan child widget sebagai tumpukan, satu di atas yang lain. Dalam tugas ini digunakan untuk menampilkan 2 buah `FloatingActionButton`.
+
 - `FloatingActionButton`
 Widget berupa floating button. Dalam tugas ini terdapat 2 buah `FloatingActionButton`, masing-masing untuk menambahkan dan mengurangi `counter`.
+
 - `Padding`
 Widget yang digunakan untuk memberikan padding. Dalam tugas ini digunakan sebagai parent widget dari `FloatingActionButton` supaya terdapat jarak antara `FloatingActionButton` dan ujung layar
 
@@ -100,3 +103,36 @@ Widget yang digunakan membuat size child widgetnya mengisi tempat yang tersedia.
 - Menambahkan sebuah halaman baru yang berisi form pada sebuah file `form.dart`. Di halaman ini terdapat widget input judul, nominal, dan jenis serta button untuk menyimpan form tersebut. Widget-widget tersebut disusun berjejer secara vertikal.
 - Menambahkan sebuah halaman baru yang berisi data budget sebuah file `data_budget.dart`. Di halaman ini memunculkan data budget yang telah disimpan. Data-data tersebut disusun berjejer secara vertikal.
 - Membuat sebuah class `Budget`. Class ini digunakan untuk menyimpan data-data yang ditambahkan. Data-data tersebut disimpan di dalam sebuah static list.
+
+## Tugas 9
+---
+### Apakah bisa kita melakukan pengambilan data JSON tanpa membuat model terlebih dahulu? Jika iya, apakah hal tersebut lebih baik daripada membuat model sebelum melakukan pengambilan data JSON?
+Ya, kita tetap bisa melakukan pengambilan data JSON tanpa membuat model terlebih dahulu. Namun, hal tersebut tidak lebih baik daripada membuat model terlebih dahulu karena data yang diambil sulit untuk disimpan secara terstruktur. Penggunaan model dapat membuat data JSON yang diambil menjadi lebih terstruktur, rapi, dan mudah digunakan.
+
+### Sebutkan widget apa saja yang kamu pakai di proyek kali ini dan jelaskan fungsinya.
+- `InkWell`
+Widget yang dapat memberikan behavior klik pada child widgetnya. Pada tugas ini digunakan untuk memberikan behavior `onTap` pada tiap judul `WatchList`.
+
+- `CheckBox`
+Widget berupa checkbox. Digunakan sebagai button checkbox untuk mengubah status `watched` pada sebuah `WatchList`.
+
+- `Row` dan `Column`
+Widget yang digunakan untuk menyusun child widget dalam baris secara vertikal atau horizontal.
+
+- `TextButton`
+Widget berupa button. Digunakan sebagai button back pada halaman detail `WatchList`.
+
+- `Center`
+Widget yang dapat menampilkan child widgetnya dengan alignment center.
+
+### Jelaskan mekanisme pengambilan data dari json hingga dapat ditampilkan pada Flutter.
+- Data di-fetch dari sebuah API endpoint.
+- Data yang sudah di-fetch kemudian di-decode menjadi bentuk JSON.
+- Data dalam bentuk JSON dikonversi menjadi data dalam bentuk sebuah model.
+- Data dalam bentuk model tersebut ditampilkan pada aplikasi Flutter.
+
+### Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
+- Membuat tombol navigasi baru pada `Drawer` untuk mengakses page `my_watchlist` dan `watchlist_detail`.
+- Membuat sebuah model `WatchList` dengan fields sesuai dengan fields object `WatchList` pada Tugas 3.
+- Membuat page `my_watchlist` untuk menampilkan judul-judul `WatchList` yang diperoleh melalui API endpoint dari Tugas 3. Judul-judul tersebut ditampilkan secara vertikal dan dapat diklik untuk mengakses page `watchlist_detail`.
+- Membuat page `watchlist_detail` yang dapat diakses dengan mengklik sebuah `WatchList` pada page `my_watchlist`. Pada page ini terdapat detail dari object `WatchList` yang diperoleh dari argumen navigasi dan tombol back untuk kembali ke page `my_watchlist`.
