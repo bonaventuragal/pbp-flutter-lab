@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:counter_7/budget.dart';
-import 'package:counter_7/drawer.dart';
+import 'package:counter_7/models/budget.dart';
+import 'package:counter_7/utils/drawer.dart';
 
 class DataBudget extends StatefulWidget {
   const DataBudget({super.key});
